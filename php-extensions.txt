@@ -1,1 +1,1 @@
-bcmath,bz2,ctype,curl,dom,fileinfo,filter,ftp,gd,iconv,mbstring,mbregex,mysqlnd,opcache,openssl,pdo,pdo_mysql,pdo_sqlite,phar,session,simplexml,sockets,sqlite3,tokenizer,xmlwriter,xmlreader,xml,zip,zlib
+apcu,bcmath,bz2,ctype,curl,dom,event,exif,fileinfo,filter,ftp,gd,iconv,imagick,imap,inotify,mbstring,mbregex,mysqlnd,opcache,openssl,pcntl,pdo,pdo_mysql,pdo_pgsql,pdo_sqlite,pgsql,phar,posix,protobuf,redis,session,simplexml,sockets,sqlite3,swow,swoole,tokenizer,xml,xmlwriter,xmlreader,xsl,zip,zlib
