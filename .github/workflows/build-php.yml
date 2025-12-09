@@ -132,7 +132,11 @@ jobs:
         id: read-extensions
         shell: bash
         run: |
-          EXTENSIONS=$(php -r "echo trim(file_get_contents('php-extensions.txt'));")
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            EXTENSIONS=$(php -r "echo trim(file_get_contents('php-extensions-win.txt'));")
+          else
+            EXTENSIONS=$(php -r "echo trim(file_get_contents('php-extensions.txt'));")
+          fi
           EXT_HASH=$(php -r "echo md5(getenv('EXTENSIONS'));")
           echo "PHP_EXTENSIONS=$EXTENSIONS" >> $GITHUB_ENV
           echo "PHP_EXT_HASH=$EXT_HASH" >> $GITHUB_ENV
