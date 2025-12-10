@@ -30,6 +30,10 @@ jobs:
             "ubuntu-latest",
             "ubuntu-24.04-arm",
           ]
+        # 排除 Windows 上的 PHP 8.5 构建
+        exclude:
+          - version: "8.5"
+            os: "windows-latest"
 
     continue-on-error: true
 
