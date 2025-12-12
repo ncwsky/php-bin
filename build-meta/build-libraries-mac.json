@@ -4,12 +4,17 @@
     "libiconv",
     "zlib",
     "libxml2",
+    "frankenphp",
     "php",
     "bzip2",
     "openssl",
     "curl",
+    "libevent",
     "libpng",
     "onig",
+    "ncurses",
+    "libedit",
+    "postgresql",
     "sqlite",
     "libzip"
 ]
