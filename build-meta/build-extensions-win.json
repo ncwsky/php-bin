@@ -24,6 +24,7 @@
     "pdo_sqlite",
     "phar",
     "session",
+    "redis",
     "simplexml",
     "sockets",
     "tokenizer",
