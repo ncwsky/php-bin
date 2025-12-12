@@ -1,4 +1,5 @@
 [
+    "apcu",
     "bcmath",
     "bz2",
     "ctype",
@@ -8,6 +9,7 @@
     "iconv",
     "xml",
     "dom",
+    "exif",
     "fileinfo",
     "filter",
     "ftp",
