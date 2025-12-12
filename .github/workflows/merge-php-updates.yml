@@ -44,10 +44,10 @@ jobs:
         shell: bash
         run: |
           echo "Merging all PHP update PRs..."
-          gh pr list --base main --head "update-php-*" --json number,title --jq '.[] | .number' | while read pr_number; do
+          gh pr list --base main --head "update-php-*" --json number,title,state --jq '.[] | select(.state == "OPEN") | .number' | while read pr_number; do
             if [ -n "$pr_number" ]; then
               echo "Merging PR #$pr_number"
-              gh pr merge "$pr_number" --${{ inputs.merge_method }} --auto || echo "Failed to merge PR #$pr_number"
+              gh pr merge "$pr_number" --${{ inputs.merge_method }} --delete-branch || echo "Failed to merge PR #$pr_number"
             fi
           done
         env:
@@ -58,10 +58,10 @@ jobs:
         shell: bash
         run: |
           echo "Merging PHP ${{ inputs.php_version }} update PRs..."
-          gh pr list --base main --head "update-php-${{ inputs.php_version }}-*" --json number,title --jq '.[] | .number' | while read pr_number; do
+          gh pr list --base main --head "update-php-${{ inputs.php_version }}-*" --json number,title,state --jq '.[] | select(.state == "OPEN") | .number' | while read pr_number; do
             if [ -n "$pr_number" ]; then
               echo "Merging PR #$pr_number"
-              gh pr merge "$pr_number" --${{ inputs.merge_method }} --auto || echo "Failed to merge PR #$pr_number"
+              gh pr merge "$pr_number" --${{ inputs.merge_method }} --delete-branch || echo "Failed to merge PR #$pr_number"
             fi
           done
         env:
